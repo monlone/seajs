@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hello Sea.js</title>
+</head>
+<body>
+<div id="container">this is a test.....</div>
+
+<script src="sea-modules/seajs/3.0.0/sea.js"></script>
+<script>
+// Set configuration
+seajs.config({
+	base: "./sea-modules/",
+	alias: {
+		"mytest": "./demo/test",
+		"jquery": "jquery/jquery/1.10.1/jquery.js"
+	}
+});
+
+seajs.use(["mytest", "jquery"], function(hi,$) {
+	hi.niubi(); 
+	$("#container").html('hello, world!!');
+});
+
+//也可以这样子用
+// seajs.use("mytest");
+
+</script>
+
+</body>
+</html>
